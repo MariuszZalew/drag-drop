@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./script/jquery-3.3.1.min.js"></script>
+    <script src="./script/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div class="firstRow">
+
+        <div class="form-style">
+            <div class="form-style-heading">Składniki</div>
+            <form action="" method="post">
+
+                <label for="field1">
+                    <span>textfield</span>
+                    <input type="text" class="input-field" name="field1" value="" />
+                </label>
+
+                <label for="field2">
+                    <span>password </span>
+                    <input type="password" class="input-field" name="field2" value="" />
+                </label>
+
+                <label for="field3">
+                    <span>textarea </span>
+                    <textarea name="field3" class="textarea-field"></textarea>
+                </label>
+
+                <label for="field4" class="check">
+                    <span>checkbox </span>
+                    <input type="checkbox" name="field4" />
+                </label>
+            </form>
+
+        </div>
+        <div class="form-style drop" id="red">
+            <div class="form-style-heading">Formularz</div>
+            <form id="blue"></form>
+            <label>
+                <input type="submit" value="Wyślij" id="button"/>
+            </label>
+        </div>
+
+    </div>
+    <div class="wynik">
+        <div class="form-style-heading">Wynik</div>
+        <div class="resolution"></div>
+    </div>
+  
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
