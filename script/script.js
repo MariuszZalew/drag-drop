@@ -1,8 +1,48 @@
 $(document).ready(function () {
+
     $(".form-style label").draggable({ helper: "clone"});
 
-    $("#blue").children().draggable({ helper: "clone" });
-    var y =  $("#blue").children();
+    // $( "#blue" ).sortable({
+    //     connectWith: "#red"
+    //   }).disableSelection();
+
+
+    //   $("#blue").children().draggable({
+    //     connectToSortable: '#red',
+    //     helper: 'clone',
+    //     revertDuration: 0
+    //   });
+//new!!!
+    $(".drop").droppable({
+        drop: function (event, ui) {
+            //przypisuję draggable element do zmiennej(kopia)
+            let element = $(ui.draggable).clone();
+            
+            element.draggable ({
+                connectToSortable: "#red",
+                stop : function (event, ui)
+                {
+                  
+                  element.remove();
+                }
+              });
+
+              //dodaję kopię do prawej części form'a
+              $(".drop form").append(element);
+        }
+    });
+
+    // $("#red label").draggable({ 
+    //       helper: "clone",
+    //       connectToSortable: "#blue"
+    // });
+
+    // $("#blue label").draggable({ 
+    //     helper: "clone",
+    //     connectToSortable: "#red"
+    //  });
+
+
     // console.log(y);
     // $(".form-style").droppable({
     //     drop: function (event, ui) {
@@ -29,13 +69,13 @@ $(document).ready(function () {
     //     }
     //   });
 
-    $(".drop").droppable({
-        drop: function (event, ui) {
-            let element = $(ui.draggable).clone();
-            $(".drop form").append(element);
-        }
-    });
-
+    //w8
+    // $(".drop").droppable({
+    //     drop: function (event, ui) {
+    //         let element = $(ui.draggable).clone();
+    //         $(".drop form").append(element);
+    //     }
+    // });
     
 
     $("#button").click(function (e) {
@@ -55,7 +95,7 @@ $(document).ready(function () {
         });
         let per = JSON.stringify(jsonData);
         // console.log(per);
-        console.log(y);
+        // console.log(y);
         $(".resolution").empty();
         $(".resolution").append(per);
     });
